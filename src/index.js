@@ -14,7 +14,7 @@ function toVal(mix) {
 				}
 			}
 		} else {
-			if (mix.selector && mix.style) {
+			if (mix.selector && mix.style && (typeof mix.style === 'string' || typeof mix === 'number')) {
 				const { selector, style } = mix;
 				style.split(' ').forEach(s => {
 					str && (str += ' ')
