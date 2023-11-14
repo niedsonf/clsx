@@ -90,4 +90,8 @@ test('(compat) handles all types of truthy and falsy property values as expected
 	assert.is(out, 'nonEmptyString whitespace function emptyObject nonEmptyObject emptyList nonEmptyList greaterZero');
 });
 
+test('(compat) handles apply selector to styles', () => {
+	assert.is(clsx('flex', {selector: '&[&_div]:', style: 'w-18 rounded'}), 'flex &[&_div]:w-18 &[&_div]:rounded');
+});
+
 test.run();
